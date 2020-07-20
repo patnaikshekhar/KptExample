@@ -6,12 +6,18 @@ spec:
   selector:
     matchLabels:
       app: greetings-app
-  replicas: 1
+  replicas: 1 # {"$kpt-set":"replicas"}
   template:
     metadata:
       labels:
         app: greetings-app
     spec:
       containers:
-        - name: main
-          image: patnaikshekhar/template-sample-app:0.1.0
+      - name: main
+        image: patnaikshekhar/template-sample-app:0.1.0
+        env:
+        - name: APP_BACKGROUND_COLOR
+          value: green # {"$kpt-set":"color"}
+        - name: APP_GREETING
+          value: World # {"$kpt-set":"greeting"}
+
