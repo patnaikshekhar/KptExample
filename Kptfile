@@ -11,3 +11,13 @@ openAPI:
         setter:
           name: replicas
           value: "3"
+    io.k8s.cli.setters.color:
+      x-k8s-cli:
+        setter:
+          name: color
+          value: blue
+    io.k8s.cli.setters.greeting:
+      x-k8s-cli:
+        setter:
+          name: greeting
+          value: World
